@@ -17,9 +17,6 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    if (!productData) {
-      res.status(400).json({ message: "No product found with this given id. Please search again!" });
-    }
     res.status(200).json({
       message: 'Product data retrieved',
       data: productData,
@@ -42,6 +39,9 @@ router.get('/:id', async (req, res) => {
         },
       ],
     });
+    if (!productData) {
+      res.status(400).json({ message: "No product found with this given id. Please search again!" });
+    }
     res.status(200).json({
       message: 'Product data retrieved',
       data: productData,
