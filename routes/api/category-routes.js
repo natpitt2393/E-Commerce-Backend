@@ -11,7 +11,7 @@ router.get ('/', async (req, res) => {
           model: Product,
         },
       ],
-      order: [["id", "DSC"]],
+      order: [["id", "ASC"]],
     });
     res.status(200).json({
       message: "Success! Category data retrieved!",
