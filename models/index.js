@@ -10,7 +10,9 @@ Product.belongsTo(Category, {
     onDelete: 'CASCADE'
 });
 
-Category.hasMany(Product);
+Category.hasMany(Product, {
+    foreignKey: 'category_id'
+});
 
 
 Product.belongsToMany(Tag, {
